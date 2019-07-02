@@ -13,6 +13,15 @@ while True:
 
 print(products)
 
-# for p in products:
-# 	print('------')
-# 	print(p)
+
+# 印出products內容
+for p in products:
+	print('------')
+	print(p)
+
+
+# p[0]為小清單中的第0項物品
+# p[1]為小清單中的第1項物品
+# 因為p代表的是小清單
+for p in products:
+	print(p[0], '的價格是', p[1], '元')

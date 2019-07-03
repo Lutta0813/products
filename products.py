@@ -1,15 +1,21 @@
-# 讀取檔案
+import os
 
 products = []
 
-with open('products.csv', 'r', encoding = 'utf-16') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue
-		name, price = line.strip().split(',')
-		products.append([name, price])
+# 確認檔案是否存在
+if os.path.isfile('products.csv'):
+	print('Data existed')
+	# 讀取檔案
+	with open('products.csv', 'r', encoding = 'utf-16') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue
+			name, price = line.strip().split(',')
+			products.append([name, price])
 
-print(products)
+	print(products)
+else:
+	print('Data does not exist, Please build a new File')
 
 # 讓使用者輸入
 
@@ -31,7 +37,7 @@ print(products)
 for p in products:
 	print('------')
 	print(p)
-	
+
 # p[0]為小清單中的第0項物品
 # p[1]為小清單中的第1項物品
 # 因為p代表的是小清單
